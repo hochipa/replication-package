@@ -9,7 +9,7 @@ ________________________________________________________________________________
 For my project I analyzed the date and rating of each episode, as well as whether the episode was action packed or related to the plot. I used IMDb to determing date and rating, and measured action packed and plot related subjectively. We collected 151 observations, and used 30 episodes for each show, but if the episode ended in the middle of the season, we continued to watch the episodes until the end of the season. 
 
 Table 1: Descriptive Statistics	for variables used in the analysis			
-	       Mean	   SD	     Min	   Max	    Description
+	 Mean	   SD	   Min     Max	    Description
 Rating	 8.42	   0.54	   7.3	   9.7	    the popularity and likeability of a tv show episode measured on imdb.com
 Date	   2016	   5.28	   2008	   2023	    when the tv show episode was released found on imdb.com
 Action	 0.6		         0	     1	      was there action in the episode, 1 for yes, 0 for no
