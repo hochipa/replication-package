@@ -1,0 +1,71 @@
+#set working directory
+setwd("C:/Users/hochi/OneDrive/STA215")
+# Load packages
+library(readr)
+library(dplyr)
+library(haven)
+
+# if data
+data <- read_delim("raw_data.csv")
+
+### create table 1
+# example
+table(data$action)
+table(data$plot)
+
+#summary statistics
+summary(data$rating)
+summary(data$date)
+summary(dataset)
+
+sd(data$rating)
+sd(data$date)
+
+
+# use the table() command with two variables. 
+# The first variable should be the rows and the second should be the column
+########## Example
+table(data$action , data$plot)
+
+# use the chisq.test() command with two variables in a contingency table
+chisq.test(table(data$action , data$plot))
+
+# Figure 1 boxplot-- dont know what to do for this
+aov(data$rating ~ data$action)
+boxplot(data$rating ~ data$action)
+
+# figure 2 scatter plot- two qualitative
+plot(data$rating ~ data$date)
+
+
+
+
+
+
+# add x line and y line for means
+meany <- mean(data$rating)
+meanx <- mean(data$date)
+
+
+
+plot(data$date , data$rating, main = "Relationship Between an Episode's Date and Rating", xlab = "Date (per year)", ylab = "Rating (out of 10)")
+abline(v = meanx, col = "blue")
+abline(h = meany, col = "purple")
+
+##### STEP 2: Calculate linear regression line (i.e., slope) and add to scatter plot
+linear_relationship <- lm(rating ~ date, data = data)
+summary(linear_relationship)
+
+# Add the linear regression line to the scatter plot
+# NOTE: double check the scatter plot is currently in your utilities window!
+abline(linear_relationship, col = "green")
+
+##### STEP 3: Plot the residuals
+
+#figure 3 residual plot- two qualitative
+plot(data$date , residuals(linear_relationship))
+
+
+# Add a horizontal line at zero to indicate the baseline
+abline(h = 0, col = "black")
+
