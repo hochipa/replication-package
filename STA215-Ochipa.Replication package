@@ -61,3 +61,5 @@ plot(data$date , residuals(linear_relationship))
 
 # Add a horizontal line at zero to indicate the baseline
 abline(h = 0, col = "black")
+
+git rm path/to/your/file
